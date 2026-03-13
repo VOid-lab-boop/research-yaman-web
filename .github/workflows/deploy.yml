@@ -33,7 +33,7 @@ jobs:
       - name: Build the site
         env:
           PORT: "3000"
-          BASE_PATH: "/"
+          BASE_PATH: "/research-yaman-web/"
         run: pnpm --filter @workspace/research-hub run build
 
       - name: Deploy to GitHub Pages
