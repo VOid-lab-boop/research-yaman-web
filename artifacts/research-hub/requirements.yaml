@@ -1,0 +1,14 @@
+packages:
+  "framer-motion": "For smooth scroll animations, glowing elements, and glassmorphism reveals"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+
+images:
+  - path: "artifacts/research-hub/public/images/hero-bg.png"
+    description: "Deep navy blue and charcoal futuristic abstract background with subtle glowing cyan and blue light leaks, geometric glassmorphism patterns, premium scientific academic feel"
+    aspect_ratio: "16:9"
+
+notes:
+  - "Everything is client-side, no backend API needed."
+  - "The app relies heavily on smooth scrolling and local state for interactive elements."
+  - "Tailwind v4 is used with custom CSS variables for the dark glowing theme."

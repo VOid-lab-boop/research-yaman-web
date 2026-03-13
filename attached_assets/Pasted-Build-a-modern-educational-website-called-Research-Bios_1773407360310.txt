@@ -1,0 +1,117 @@
+Build a modern educational website called “Research & Biostatistics Learning Hub for Dental Students”.
+
+Purpose:
+This website is a visually appealing and interactive summary of 6 university lectures about research methodology, databases, and basic biostatistics for dental students at the Hashemite University of Jordan. The content should feel academically strong, easy to understand, and impressive enough for a class presentation.
+
+Design style:
+- Modern, elegant, academic, and futuristic
+- Main colors: deep blue, shades of gray, purple, and glowing green accents
+- Use soft gradients, glassmorphism cards, subtle glow effects, and smooth hover animations
+- Make it look premium but still professional and readable
+- Clean typography with excellent spacing
+- Responsive on laptop and mobile
+
+Main sections:
+1. Hero section
+   - Title: “Research & Biostatistics Learning Hub”
+   - Subtitle: “An interactive summary of 6 lectures for dental students”
+   - Short paragraph about the importance of research in dentistry
+   - Buttons: “Explore Lectures” and “Try AI Helper”
+
+2. Overview section
+   - Explain why research matters in dentistry
+   - Explain how evidence-based practice depends on proper research understanding
+   - Show a visual summary of the 6 lectures
+
+3. Six lecture summary cards
+   Create 6 beautifully designed cards or expandable sections:
+   - Lecture 1: What is research? Importance of research in health sciences and dentistry
+   - Lecture 2: Types of research and differences between study approaches
+   - Lecture 3: How to form a research question and begin a study
+   - Lecture 4: Databases and literature searching
+   - Lecture 5: Basics of biostatistics
+   - Lecture 6: Interpreting results and understanding scientific evidence
+
+For each lecture include:
+- A short summary
+- Key points
+- Important terms and definitions
+- Simple dental-related examples
+- A “What to remember” box
+
+4. Glossary section
+   Include a searchable glossary with definitions for:
+   research, hypothesis, variable, sample, population, bias, validity, reliability, database, PubMed, Scopus, Google Scholar, cross-sectional study, cohort study, case-control study, qualitative research, quantitative research, mean, median, mode, standard deviation, p-value, statistical significance, correlation
+
+5. Research process timeline
+   Create a step-by-step visual flow:
+   - Identify a problem
+   - Ask a focused research question
+   - Review literature
+   - Choose study design
+   - Select sample
+   - Collect data
+   - Analyze data
+   - Interpret findings
+   - Write and present results
+
+6. Databases section
+   Show educational cards for:
+   - PubMed
+   - Scopus
+   - Web of Science
+   - Google Scholar
+   - Cochrane Library
+
+For each one include:
+- What it is
+- Why students use it
+- What type of sources it gives
+- When it is useful in dental research
+
+7. Biostatistics section
+   Explain in a simple and visual way:
+   - mean
+   - median
+   - mode
+   - percentages
+   - standard deviation
+   - p-value
+   - correlation
+   - significance
+
+Make explanations very easy for beginners.
+
+8. AI Helper section
+   Add a chatbot-style interface called “Ask the Research Assistant”
+   It should help students understand:
+   - lecture summaries
+   - research definitions
+   - database differences
+   - basic statistics terms
+
+If no real API is connected, create a smart simulated chatbot with preset educational answers for common questions.
+
+9. Quiz section
+   Add 5–10 multiple choice questions based on the lecture topics
+   Show answers after selection
+   Keep the design modern and fun
+
+10. Footer
+   Include a clean footer with:
+   - “Prepared for dental students”
+   - “Hashemite University”
+   - Elegant academic design
+
+Technical requirements:
+- Use smooth scrolling
+- Add modern transitions and hover effects
+- Use icons for sections
+- Use cards with shadows and glowing borders
+- Make the UI polished and presentation-ready
+- Keep content editable so I can replace and customize text later
+
+Tone:
+- Academic but student-friendly
+- Clear, insightful, and easy to understand
+- Designed to impress a university professor
