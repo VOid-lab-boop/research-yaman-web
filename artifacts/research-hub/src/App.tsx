@@ -588,7 +588,7 @@ function BioStatsTab() {
    ═══════════════════════════════════════ */
 function AIHelperTab() {
   const [messages, setMessages] = useState<{ role: "user" | "bot"; text: string }[]>([
-    { role: "bot", text: "Hello! I'm the Research Hub AI Assistant, trained on the lecture notes prepared by Yaman Akour. Ask me anything about research methodology, study designs, databases, or biostatistics!" },
+    { role: "bot", text: "Hey there! 😊 I'm your Research Hub AI Assistant — trained on all 6 lectures by Yaman Akour. I'm here to help you understand study designs, research types, biostatistics, databases, and everything in between. What would you like to explore today?" },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -596,29 +596,44 @@ function AIHelperTab() {
 
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, isTyping]);
 
+  const findResponse = (text: string): string => {
+    const lower = text.toLowerCase();
+    for (const entry of aiResponses) {
+      if (entry.keywords.some((kw) => lower.includes(kw.toLowerCase()))) {
+        return entry.answer;
+      }
+    }
+    const fallbacks = [
+      "Hmm, I'm not sure about that specific topic from the lectures! 🤔 Try asking about study designs (cohort, RCT, cross-sectional), hypothesis types, databases like PubMed, p-values, or the 11 steps of research. I'm here to help!",
+      "That's a great question, but it's a bit outside my lecture coverage! 😊 I'm best at topics like: research types (quantitative, qualitative, mixed), study designs, biostatistics basics, journal article writing, and academic databases. Give one of those a try!",
+      "I want to help, but that topic isn't covered in the 6 lectures I know. 📚 Ask me about things like: the null hypothesis, what makes a good title, the difference between a cohort and case-control study, or what ORCID is!",
+    ];
+    return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+  };
+
   const handleSend = (text: string) => {
     if (!text.trim()) return;
     setMessages((p) => [...p, { role: "user", text }]);
     setInput("");
     setIsTyping(true);
     setTimeout(() => {
-      let response = "I don't have exact information on that from the lectures. Try asking about hypothesis, study designs (cohort, RCT, cross-sectional), or the difference between search and research.";
-      const lower = text.toLowerCase();
-      for (const [key, val] of Object.entries(aiResponses)) {
-        if (lower.includes(key)) { response = val; break; }
-      }
+      const response = findResponse(text);
       setMessages((p) => [...p, { role: "bot", text: response }]);
       setIsTyping(false);
-    }, 1000 + Math.random() * 500);
+    }, 800 + Math.random() * 600);
   };
 
   const suggestions = [
     "What is a hypothesis?",
-    "Difference between search and research?",
+    "Search vs research?",
     "What is a cohort study?",
-    "What is an RCT?",
+    "Explain RCT",
     "What is a p-value?",
     "What is qualitative research?",
+    "What are the 11 research steps?",
+    "Tell me about PubMed",
+    "What is a null hypothesis?",
+    "How do I write a good title?",
   ];
 
   return (
@@ -631,7 +646,7 @@ function AIHelperTab() {
         <p className="text-slate-400">A simulated AI trained exclusively on the lecture notes.</p>
       </div>
 
-      <div className="glass-panel rounded-2xl border border-white/10 flex flex-col h-[540px] overflow-hidden shadow-2xl">
+      <div className="glass-panel rounded-2xl border border-white/10 flex flex-col h-[620px] overflow-hidden shadow-2xl">
         <div className="flex-1 overflow-y-auto p-6 space-y-5">
           {messages.map((msg, i) => (
             <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
@@ -639,7 +654,7 @@ function AIHelperTab() {
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${msg.role === "user" ? "bg-cyan-600" : "bg-blue-600"}`}>
                   {msg.role === "user" ? <User className="w-4 h-4 text-white" /> : <Bot className="w-4 h-4 text-white" />}
                 </div>
-                <div className={`p-4 rounded-2xl text-sm leading-relaxed ${msg.role === "user" ? "bg-cyan-600/20 border border-cyan-500/30 text-white rounded-tr-none" : "bg-white/5 border border-white/10 text-slate-200 rounded-tl-none"}`}>
+                <div className={`p-4 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${msg.role === "user" ? "bg-cyan-600/20 border border-cyan-500/30 text-white rounded-tr-none" : "bg-white/5 border border-white/10 text-slate-200 rounded-tl-none"}`}>
                   {msg.text}
                 </div>
               </div>
